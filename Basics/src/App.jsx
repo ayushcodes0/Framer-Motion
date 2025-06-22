@@ -1,34 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react'
+import { motion } from 'framer-motion'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div
+        className='flex items-center justify-center h-screen bg-[#121212]'
+        style={{
+          backgroundImage: `radial-gradient(	rgba(31, 41, 55, 1) 1px, transparent 1px)`,
+          backgroundSize: '20px 20px',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'repeat',
+        }}
+    >
+      <motion.button
+      initial = {{
+        rotate: 0,
+      }}
+      animate = {{
+        rotate: 20,
+      }}
+      className='group text-2xl font-medium text-[#a8a8a8] py-5 px-16 rounded-xl bg-[#191b1c] relative'>
+        Hello World
+        <span className='absolute inset-x-0 bottom-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent h-px w-3/4 mx-auto'></span>
+        <span className='opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute inset-x-0 bottom-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent h-[5px] w-full mx-auto blur-sm'></span>
+      </motion.button>
+    </div>
   )
 }
 
